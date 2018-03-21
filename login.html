@@ -5,12 +5,27 @@
     <title>Login</title>
 </head>
 <body>
-    <form>
-    <input placeholder="Entrez votre username" id="username">
+    <input type="text" placeholder="Entrez votre username" id="username">
         <br>
-    <input placeholder="Entrez votre password" id="password">
+    <input type="text" placeholder="Entrez votre password" id="password">
         <br>
-    <button type="submit">Submit</button>
+    <button onclick="sendInfo()">Submit</button>
     </form>
 </body>
 </html>
+<script>
+    function sendInfo() {
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+        let init = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username : username, pass: password})
+        }
+
+        fetch('http://127.0.0.1:8081/login/',init).then()
+    }
+</script>
