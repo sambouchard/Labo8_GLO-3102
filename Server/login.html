@@ -20,12 +20,12 @@
         let init = {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
+                Accept: 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({username : username, pass: password})
+            body: JSON.stringify({username: username, password : password})
         }
 
-        fetch('http://127.0.0.1:8081/login/',init).then()
+        fetch('http://localhost:8080/login',init).then()
     }
 </script>
